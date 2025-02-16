@@ -26,6 +26,7 @@ abstract class FileMessage extends Message {
     super.showStatus,
     required this.size,
     super.status,
+    super.text,
     MessageType? type,
     super.updatedAt,
     required this.uri,
@@ -45,6 +46,7 @@ abstract class FileMessage extends Message {
     bool? showStatus,
     required num size,
     Status? status,
+    String text,
     MessageType? type,
     int? updatedAt,
     required String uri,
@@ -65,6 +67,7 @@ abstract class FileMessage extends Message {
     String? roomId,
     bool? showStatus,
     Status? status,
+    String text = '',
     int? updatedAt,
   }) =>
       _FileMessage(
@@ -81,6 +84,7 @@ abstract class FileMessage extends Message {
         showStatus: showStatus,
         size: partialFile.size,
         status: status,
+        text: text,
         type: MessageType.file,
         updatedAt: updatedAt,
         uri: partialFile.uri,
@@ -117,6 +121,7 @@ abstract class FileMessage extends Message {
         showStatus,
         size,
         status,
+        text,
         updatedAt,
         uri,
       ];
@@ -136,6 +141,7 @@ abstract class FileMessage extends Message {
     bool? showStatus,
     num? size,
     Status? status,
+    String? text,
     int? updatedAt,
     String? uri,
   });
@@ -161,6 +167,7 @@ class _FileMessage extends FileMessage {
     super.showStatus,
     required super.size,
     super.status,
+    super.text,
     super.type,
     super.updatedAt,
     required super.uri,
@@ -182,6 +189,7 @@ class _FileMessage extends FileMessage {
     dynamic showStatus = _Unset,
     num? size,
     dynamic status = _Unset,
+    String? text,
     dynamic updatedAt = _Unset,
     String? uri,
     dynamic width = _Unset,
@@ -205,6 +213,7 @@ class _FileMessage extends FileMessage {
             showStatus == _Unset ? this.showStatus : showStatus as bool?,
         size: size ?? this.size,
         status: status == _Unset ? this.status : status as Status?,
+        text: text ?? this.text,
         updatedAt: updatedAt == _Unset ? this.updatedAt : updatedAt as int?,
         uri: uri ?? this.uri,
       );

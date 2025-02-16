@@ -27,6 +27,7 @@ abstract class ImageMessage extends Message {
     super.status,
     MessageType? type,
     super.updatedAt,
+    super.text,
     required this.uri,
     this.width,
   }) : super(type: type ?? MessageType.image);
@@ -44,6 +45,7 @@ abstract class ImageMessage extends Message {
     bool? showStatus,
     required num size,
     Status? status,
+    String text,
     MessageType? type,
     int? updatedAt,
     required String uri,
@@ -64,6 +66,7 @@ abstract class ImageMessage extends Message {
     String? roomId,
     bool? showStatus,
     Status? status,
+    String? text,
     int? updatedAt,
   }) =>
       _ImageMessage(
@@ -79,6 +82,7 @@ abstract class ImageMessage extends Message {
         showStatus: showStatus,
         size: partialImage.size,
         status: status,
+        text: text ?? '',
         type: MessageType.image,
         updatedAt: updatedAt,
         uri: partialImage.uri,
@@ -115,6 +119,7 @@ abstract class ImageMessage extends Message {
         showStatus,
         size,
         status,
+        text,
         updatedAt,
         uri,
         width,
@@ -135,6 +140,7 @@ abstract class ImageMessage extends Message {
     num? size,
     Status? status,
     int? updatedAt,
+    String? text,
     String? uri,
     double? width,
   });
@@ -161,6 +167,7 @@ class _ImageMessage extends ImageMessage {
     super.status,
     super.type,
     super.updatedAt,
+    super.text,
     required super.uri,
     super.width,
   }) : super._();
@@ -180,6 +187,7 @@ class _ImageMessage extends ImageMessage {
     num? size,
     dynamic status = _Unset,
     dynamic updatedAt = _Unset,
+    String? text,
     String? uri,
     dynamic width = _Unset,
   }) =>
@@ -202,6 +210,7 @@ class _ImageMessage extends ImageMessage {
         size: size ?? this.size,
         status: status == _Unset ? this.status : status as Status?,
         updatedAt: updatedAt == _Unset ? this.updatedAt : updatedAt as int?,
+        text: text ?? this.text,
         uri: uri ?? this.uri,
         width: width == _Unset ? this.width : width as double?,
       );

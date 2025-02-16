@@ -22,6 +22,7 @@ AudioMessage _$AudioMessageFromJson(Map<String, dynamic> json) => AudioMessage(
       showStatus: json['showStatus'] as bool?,
       size: json['size'] as num,
       status: $enumDecodeNullable(_$StatusEnumMap, json['status']),
+      text: json['text'] as String,
       type: $enumDecodeNullable(_$MessageTypeEnumMap, json['type']),
       updatedAt: json['updatedAt'] as int?,
       uri: json['uri'] as String,

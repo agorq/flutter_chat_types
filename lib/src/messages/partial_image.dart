@@ -21,6 +21,7 @@ class PartialImage {
     this.repliedMessage,
     required this.size,
     required this.uri,
+    this.text = '',
     this.width,
   });
 
@@ -45,6 +46,8 @@ class PartialImage {
 
   /// The image source (either a remote URL or a local resource).
   final String uri;
+
+  final String text;
 
   /// Image width in pixels.
   final double? width;

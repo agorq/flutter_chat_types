@@ -24,7 +24,7 @@ abstract class TextMessage extends Message {
     super.roomId,
     super.showStatus,
     super.status,
-    required this.text,
+    required super.text,
     MessageType? type,
     super.updatedAt,
   }) : super(type: type ?? MessageType.text);
@@ -79,9 +79,6 @@ abstract class TextMessage extends Message {
 
   /// See [PreviewData].
   final PreviewData? previewData;
-
-  /// User's message.
-  final String text;
 
   /// Equatable props.
   @override

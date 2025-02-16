@@ -25,6 +25,7 @@ abstract class UnsupportedMessage extends Message {
     super.showStatus,
     super.status,
     MessageType? type,
+    super.text,
     super.updatedAt,
   }) : super(type: type ?? MessageType.unsupported);
 
@@ -39,6 +40,7 @@ abstract class UnsupportedMessage extends Message {
     bool? showStatus,
     Status? status,
     MessageType? type,
+    String text,
     int? updatedAt,
   }) = _UnsupportedMessage;
 
@@ -58,6 +60,7 @@ abstract class UnsupportedMessage extends Message {
         roomId,
         showStatus,
         status,
+        text,
         updatedAt,
       ];
 
@@ -72,6 +75,7 @@ abstract class UnsupportedMessage extends Message {
     String? roomId,
     bool? showStatus,
     Status? status,
+    String? text,
     int? updatedAt,
   });
 
@@ -94,6 +98,7 @@ class _UnsupportedMessage extends UnsupportedMessage {
     super.showStatus,
     super.status,
     super.type,
+    super.text,
     super.updatedAt,
   }) : super._();
 
@@ -108,6 +113,7 @@ class _UnsupportedMessage extends UnsupportedMessage {
     dynamic roomId = _Unset,
     dynamic showStatus = _Unset,
     dynamic status = _Unset,
+    String? text,
     dynamic updatedAt = _Unset,
   }) =>
       _UnsupportedMessage(
@@ -125,6 +131,7 @@ class _UnsupportedMessage extends UnsupportedMessage {
         showStatus:
             showStatus == _Unset ? this.showStatus : showStatus as bool?,
         status: status == _Unset ? this.status : status as Status?,
+        text: text ?? this.text,
         updatedAt: updatedAt == _Unset ? this.updatedAt : updatedAt as int?,
       );
 }

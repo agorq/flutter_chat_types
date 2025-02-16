@@ -21,6 +21,7 @@ class PartialAudio {
     this.repliedMessage,
     required this.size,
     required this.uri,
+    this.text = '',
     this.waveForm,
   });
 
@@ -48,6 +49,8 @@ class PartialAudio {
 
   /// The audio file source (either a remote URL or a local resource).
   final String uri;
+
+  final String text;
 
   /// Wave form represented as a list of decibel levels.
   final List<double>? waveForm;

@@ -28,6 +28,7 @@ abstract class AudioMessage extends Message {
     super.status,
     MessageType? type,
     super.updatedAt,
+    super.text,
     required this.uri,
     this.waveForm,
   }) : super(type: type ?? MessageType.audio);
@@ -48,6 +49,7 @@ abstract class AudioMessage extends Message {
     Status? status,
     MessageType? type,
     int? updatedAt,
+    String text,
     required String uri,
     List<double>? waveForm,
   }) = _AudioMessage;
@@ -64,6 +66,7 @@ abstract class AudioMessage extends Message {
     required PartialAudio partialAudio,
     String? remoteId,
     String? roomId,
+    String text = '',
     bool? showStatus,
     Status? status,
     int? updatedAt,
@@ -82,6 +85,7 @@ abstract class AudioMessage extends Message {
         showStatus: showStatus,
         size: partialAudio.size,
         status: status,
+        text: text,
         type: MessageType.audio,
         updatedAt: updatedAt,
         uri: partialAudio.uri,
@@ -123,6 +127,7 @@ abstract class AudioMessage extends Message {
         size,
         status,
         updatedAt,
+        text,
         uri,
         waveForm,
       ];
@@ -143,6 +148,7 @@ abstract class AudioMessage extends Message {
     num? size,
     Status? status,
     int? updatedAt,
+    String? text,
     String? uri,
     List<double>? waveForm,
   });
@@ -170,6 +176,7 @@ class _AudioMessage extends AudioMessage {
     super.status,
     super.type,
     super.updatedAt,
+    super.text,
     required super.uri,
     super.waveForm,
   }) : super._();
@@ -190,6 +197,7 @@ class _AudioMessage extends AudioMessage {
     num? size,
     dynamic status = _Unset,
     dynamic updatedAt = _Unset,
+    String? text,
     String? uri,
     dynamic waveForm = _Unset,
   }) =>
@@ -213,6 +221,7 @@ class _AudioMessage extends AudioMessage {
         size: size ?? this.size,
         status: status == _Unset ? this.status : status as Status?,
         updatedAt: updatedAt == _Unset ? this.updatedAt : updatedAt as int?,
+        text: text ?? this.text,
         uri: uri ?? this.uri,
         waveForm:
             waveForm == _Unset ? this.waveForm : waveForm as List<double>?,

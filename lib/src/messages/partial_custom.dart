@@ -16,6 +16,7 @@ class PartialCustom {
   /// message from a partial one.
   const PartialCustom({
     this.metadata,
+    this.text = '',
     this.repliedMessage,
   });
 
@@ -28,6 +29,8 @@ class PartialCustom {
 
   /// Message that is being replied to with the current message.
   final Message? repliedMessage;
+
+  final String text;
 
   /// Converts a partial custom message to the map representation, encodable to JSON.
   Map<String, dynamic> toJson() => _$PartialCustomToJson(this);

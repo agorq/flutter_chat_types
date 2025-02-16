@@ -40,6 +40,7 @@ abstract class Message extends Equatable {
     this.roomId,
     this.showStatus,
     this.status,
+    this.text = '',
     required this.type,
     this.updatedAt,
   });
@@ -102,6 +103,9 @@ abstract class Message extends Equatable {
   /// [MessageType].
   final MessageType type;
 
+  /// User's message.
+  final String text;
+
   /// Updated message timestamp, in ms.
   final int? updatedAt;
 
@@ -116,6 +120,7 @@ abstract class Message extends Equatable {
     String? roomId,
     bool? showStatus,
     Status? status,
+    String? text,
     int? updatedAt,
   });
 

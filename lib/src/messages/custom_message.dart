@@ -23,6 +23,7 @@ abstract class CustomMessage extends Message {
     super.roomId,
     super.showStatus,
     super.status,
+    super.text,
     MessageType? type,
     super.updatedAt,
   }) : super(type: type ?? MessageType.custom);
@@ -37,6 +38,7 @@ abstract class CustomMessage extends Message {
     String? roomId,
     bool? showStatus,
     Status? status,
+    String text,
     MessageType? type,
     int? updatedAt,
   }) = _CustomMessage;
@@ -55,6 +57,7 @@ abstract class CustomMessage extends Message {
     String? roomId,
     bool? showStatus,
     Status? status,
+    String text = '',
     int? updatedAt,
   }) =>
       _CustomMessage(
@@ -67,6 +70,7 @@ abstract class CustomMessage extends Message {
         roomId: roomId,
         showStatus: showStatus,
         status: status,
+        text: text,
         type: MessageType.custom,
         updatedAt: updatedAt,
       );
@@ -83,6 +87,7 @@ abstract class CustomMessage extends Message {
         roomId,
         showStatus,
         status,
+        text,
         updatedAt,
       ];
 
@@ -97,6 +102,7 @@ abstract class CustomMessage extends Message {
     String? roomId,
     bool? showStatus,
     Status? status,
+    String? text,
     int? updatedAt,
   });
 
@@ -119,6 +125,7 @@ class _CustomMessage extends CustomMessage {
     super.showStatus,
     super.status,
     super.type,
+    super.text,
     super.updatedAt,
   }) : super._();
 
@@ -133,6 +140,7 @@ class _CustomMessage extends CustomMessage {
     dynamic roomId = _Unset,
     dynamic showStatus = _Unset,
     dynamic status = _Unset,
+    String? text,
     dynamic updatedAt = _Unset,
   }) =>
       _CustomMessage(
@@ -150,6 +158,7 @@ class _CustomMessage extends CustomMessage {
         showStatus:
             showStatus == _Unset ? this.showStatus : showStatus as bool?,
         status: status == _Unset ? this.status : status as Status?,
+        text: text ?? this.text,
         updatedAt: updatedAt == _Unset ? this.updatedAt : updatedAt as int?,
       );
 }
