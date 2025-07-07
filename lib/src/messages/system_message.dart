@@ -22,7 +22,7 @@ abstract class SystemMessage extends Message {
     super.roomId,
     super.showStatus,
     super.status,
-    required this.text,
+    required super.text,
     MessageType? type,
     super.updatedAt,
   }) : super(type: type ?? MessageType.system);
@@ -47,7 +47,6 @@ abstract class SystemMessage extends Message {
       _$SystemMessageFromJson(json);
 
   /// System message content (could be text or translation key).
-  final String text;
 
   /// Equatable props.
   @override
